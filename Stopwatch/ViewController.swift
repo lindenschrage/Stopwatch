@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     var timer = NSTimer()
+    var counter = 0
     
     @IBOutlet weak var stopwatchLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
@@ -18,17 +19,15 @@ class ViewController: UIViewController {
     
     
     @IBAction func startTime(sender: AnyObject) {
-        stopwatchLabel.text = "start"
         alternatebuttons()
         validateTimer()
         
     }
     
     @IBAction func stopButton(sender: AnyObject) {
-        stopwatchLabel.text = "stop"
         alternatebuttons()
         timer.invalidate()
-        print("stop")
+        counter = 0
     }
 
     override func viewDidLoad() {
@@ -54,8 +53,8 @@ class ViewController: UIViewController {
         timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: repeatingFunction, userInfo: nil, repeats: true)
     }
     func updateTime() {
-        print("wow")
-    
+        counter+=1
+        stopwatchLabel.text = "\(counter)"
     }
 
 }
