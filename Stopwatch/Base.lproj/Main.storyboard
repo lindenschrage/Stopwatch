@@ -45,7 +45,7 @@
                                     <color key="titleShadowColor" red="0.34317301370656261" green="0.2416959325841645" blue="0.98039215690000003" alpha="0.8369073275862069" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="startButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KzR-EK-Nva"/>
+                                    <action selector="startTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8ER-LI-f7B"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDo-B5-Wya">
@@ -77,6 +77,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="startButton" destination="nMZ-gY-yMq" id="fHB-zM-cDK"/>
+                        <outlet property="stopButton" destination="JDo-B5-Wya" id="0aC-9u-8Mv"/>
                         <outlet property="stopwatchLabel" destination="r6I-dm-5l8" id="Jhc-np-tG7"/>
                     </connections>
                 </viewController>
