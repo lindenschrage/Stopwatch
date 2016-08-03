@@ -9,6 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBAction func startButton(sender: AnyObject) {
+    }
+    @IBOutlet weak var stopwatchLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
