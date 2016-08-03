@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var timer = NSTimer()
+    
     @IBOutlet weak var stopwatchLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
@@ -18,11 +20,15 @@ class ViewController: UIViewController {
     @IBAction func startTime(sender: AnyObject) {
         stopwatchLabel.text = "start"
         alternatebuttons()
+        validateTimer()
+        
     }
     
     @IBAction func stopButton(sender: AnyObject) {
         stopwatchLabel.text = "stop"
         alternatebuttons()
+        timer.invalidate()
+        print("stop")
     }
 
     override func viewDidLoad() {
@@ -42,7 +48,13 @@ class ViewController: UIViewController {
         startButton.enabled = !startButton.enabled
         stopButton.hidden = !stopButton.hidden
         stopButton.enabled = !stopButton.enabled
-        
+    }
+    func validateTimer() {
+        let repeatingFunction = #selector(ViewController.updateTime)
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: repeatingFunction, userInfo: nil, repeats: true)
+    }
+    func updateTime() {
+        print("wow")
     
     }
 
