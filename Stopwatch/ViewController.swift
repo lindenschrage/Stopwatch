@@ -10,8 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBAction func startButton(sender: AnyObject) {
+        stopwatchLabel.text = "start"
     }
     @IBOutlet weak var stopwatchLabel: UILabel!
+    
+    @IBAction func stopButton(sender: AnyObject) {
+        stopwatchLabel.text = "stop"
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
